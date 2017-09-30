@@ -9,8 +9,35 @@
 
 <body>
     <svg width="300" height="300">
-        <polygon fill="#D271FF" points="0,100 100,100 50,0" />
+        <polygon class="smallAngle" points="52,100 152,100 102,0" />
+        <!-- right corner -->
+        <polygon class="bigAngle" points="106,0 154,38 156,98 200,0" />
+        <polygon class="smallAngle" points="104,0 154,100 152,40" />
+        <!-- left corner -->
+        <polygon class="bigAngle" points="98,0 50,38 48,100 0,0" />
+        <polygon class="smallAngle" points="100,0 50,100 52,40" />
+        <!-- bottom corner -->
+        <polygon class="bigAngle" points="52,104 102,127 152,104 102,200" />
+        <polygon class="smallAngle" points="52,102 152,102 102,125" />
     </svg>
 </body>
+
+<style>
+    .smallAngle {
+        fill: #FF6464;
+    }
+
+    .smallAngle:hover {
+        fill: #9B0000;
+    }
+
+    .bigAngle {
+        fill: #FCFF58;
+    }
+
+    .bigAngle:hover {
+        fill: #FF8C27;
+    }
+</style>
 
 </html>
