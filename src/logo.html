@@ -8,23 +8,23 @@
 </head>
 
 <body>
-    <svg width="300" height="300">
-        <polygon class="bigAngle" points="77,48 102,66 126,48 102,0" />
-        <polygon class="bigAngle" points="52,100 76,50 101,68 101,100" />
-        <polygon class="bigAngle" points="103,100 103,68 127,50 152,100" />
-        <!-- <polygon class="bigAngle" points="52,100 152,100 102,0" /> -->
+    <svg width="200" height="200">
+        <!-- center -->
+        <polygon top class="bigAngle" points="78,48 102,66 126,48 102,0" />
+        <polygon left class="bigAngle" points="52,100 77,50 101,68 101,100" />
+        <polygon right class="bigAngle" points="103,100 103,68 127,50 152,100" />
         <!-- right corner -->
-        <polygon class="bigAngle" points="106,0 153,32 199,0" />
-        <polygon class="bigAngle" points="154,33 156,98 200,1" />
-        <polygon class="bigAngle" points="104,0 154,100 152,34" />
+        <polygon top class="bigAngle" points="106,0 155,32 199,0" />
+        <polygon bottom class="bigAngle" points="156,34 156,98 200,1" />
+        <polygon small class="bigAngle" points="104,0 154,100 154,34" />
         <!-- left corner -->
-        <polygon class="bigAngle" points="98,0 51,32 1,0" />
-        <polygon class="bigAngle" points="50,33 48,100 0,1" />
-        <polygon class="bigAngle" points="100,0 50,100 52,34" />
+        <polygon top class="bigAngle" points="98,0 49,32 1,0" />
+        <polygon bottom class="bigAngle" points="48,34 48,100 0,1" />
+        <polygon small class="bigAngle" points="100,0 50,100 50,34" />
         <!-- bottom corner -->
-        <polygon class="bigAngle" points="52,104 101,128 101,200" />
-        <polygon class="bigAngle" points="103,128 152,104 103,200" />
-        <polygon class="bigAngle" points="52,102 152,102 102,126" />
+        <polygon left class="bigAngle" points="52,104 101,128 101,200" />
+        <polygon right class="bigAngle" points="103,128 152,104 103,200" />
+        <polygon small class="bigAngle" points="52,102 152,102 102,126" />
     </svg>
 </body>
 
@@ -38,7 +38,7 @@
     }
 
     .bigAngle {
-        fill: #FCFF58;
+        fill: #000000;
     }
 
     .bigAngle:hover {

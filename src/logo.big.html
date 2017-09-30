@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <svg class="logo" width="200" height="200">
+
+        <!-- center -->
+        <polygon top class="bigAngle" points="75,50 100,68 127,50 100,0" />
+        <polygon left class="bigAngle" points="52,100 75,49 100,67 100,100" />
+        <polygon right class="bigAngle" points="100,100 100,67 127,49 152,100" />
+        <!-- right corner -->
+        <polygon top class="bigAngle" points="100,0 152,34 200,0" />
+        <polygon bottom class="bigAngle" points="150,33 152,100 200,0" />
+        <polygon small class="bigAngle" points="100,0 152,100 154,33" />
+        <!-- left corner -->
+        <polygon top class="bigAngle" points="100,0 52,34 0,0" />
+        <polygon bottom class="bigAngle" points="53,33 52,100 0,0" />
+        <polygon small class="bigAngle" points="100,0 52,100 52,33" />
+        <!-- bottom corner -->
+        <polygon left class="bigAngle" points="52,100 100,127 100,200" />
+        <polygon right class="bigAngle" points="100,127 152,100 100,200" />
+        <polygon small class="bigAngle" points="52,100 152,100 100,128" />
+        <!-- <polygon top class="bigsAngle" points="0,0 200,0 102,200" /> -->
+    </svg>
+</body>
+
+<style>
+    .logo {
+        transform: rotate(180deg)
+    }
+
+    .bigsAngle {
+        fill: red
+    }
+
+    .smallAngle {
+        fill: #FF6464;
+    }
+
+    .smallAngle:hover {
+        fill: #9B0000;
+    }
+
+    .bigAngle {
+        fill: #000000;
+    }
+
+    .bigAngle:hover {
+        fill: #FF8C27;
+    }
+</style>
+
+</html>
