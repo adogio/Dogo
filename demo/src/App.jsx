@@ -7,7 +7,16 @@ import Logo from './logo';
 class App extends Component {
   render() {
     return (
-      <Logo></Logo>
+      <div>
+        <div>
+          <Logo text="adog.iossssss"></Logo>
+        </div>
+        <div>
+          <Logo text="adog.iosss"></Logo>
+          <Logo text="adog.ios"></Logo>
+          <Logo text="adog"></Logo>
+        </div>
+      </div>
     );
   }
 }
