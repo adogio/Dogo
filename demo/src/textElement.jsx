@@ -2,18 +2,15 @@ import React, {
     Component
 } from 'react';
 
-class Angle extends Component {
+class TextElement extends Component {
     bothColor = { transition: "0.2s all" }
-    defaultColor = null;
-    hoverColor = { fill: "#250000" };
-    hoverColorList = ["FFD9D9", "FFE4D9", "FFEFD9", "F8FFD9", "DAFFD9", "D9FEFF", "D9E9FF", "D9E3FF", "E6D9FF", "FFD9FF", "FFD9EF"];
+    defaultColor = { color: "black" };
+    hoverColor = { color: "red" };
 
     constructor(props) {
         super(props);
         this.handleHover = this.handleHover.bind(this);
         this.releaseHover = this.releaseHover.bind(this);
-        this.getRandColor = this.getRandColor.bind(this);
-        this.defaultColor = this.getRandColor();
         this.state = {
             hover: false
         }
@@ -21,23 +18,17 @@ class Angle extends Component {
 
     render() {
         return (
-            <polygon
+            <span
                 onMouseOver={this.handleHover}
                 onMouseLeave={this.releaseHover}
                 style={
                     Object.assign({}, this.bothColor, this.props.reverse ?
                         this.hoverColor : this.state.hover ?
-                            this.hoverColor :
-                            this.props.color ? this.props.color : this.defaultColor)
+                            this.hoverColor : this.defaultColor)
                 }
                 points={this.props.points}
-            />
+            >{this.props.char}</span>
         );
-    }
-
-    getRandColor() {
-        const color = this.hoverColorList[Math.floor(Math.random() * 1000) % this.hoverColorList.length];
-        return { fill: "#" + color };
     }
 
     handleHover() {
@@ -53,4 +44,4 @@ class Angle extends Component {
     }
 }
 
-export default Angle;
+export default TextElement;

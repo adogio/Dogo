@@ -1,10 +1,10 @@
 import React, {
     Component
 } from 'react';
+import TextElement from './textElement';
 
 class AText extends Component {
-    defaultColor = { color: "black" };
-    hoverColorList = [];
+
     constructor(props) {
         super(props);
         this.renderText = this.renderText.bind(this);
@@ -17,7 +17,7 @@ class AText extends Component {
     }
 
     renderText(value, index) {
-        console.log(value, index)
+        return <TextElement char={value} key={"char" + index} reverse={this.props.animate % this.props.text.length === index} />
     }
 }
 
