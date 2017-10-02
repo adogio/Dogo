@@ -33,7 +33,7 @@ class SmallLogo extends Component {
                     onMouseLeave={this.releaseHover}
                 >
                     <polygon style={this.props.defaultColor} points="0,0 200,0 100,200" />
-                    <AngleList animate={this.props.animate} />
+                    <AngleList animate={this.props.animate} allIn={this.props.allIn} />
                 </svg>
                 <div
                     style={{
@@ -45,10 +45,10 @@ class SmallLogo extends Component {
                     onMouseLeave={this.releaseHover}
                 >
                     <span style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onclick}>
-                        <AText text={this.props.text} animate={this.props.animate} />
+                        <AText text={this.props.text} animate={this.props.animate} allIn={this.props.allIn} />
                     </span>
                     <span style={Object.assign({}, subpaddings, subtext, { fontFamily: this.props.font })} onClick={this.props.onclick}>
-                        <AText text={this.props.sub} />
+                        <AText text={this.props.sub} allIn={this.props.allIn} />
                     </span>
                 </div>
             </div>

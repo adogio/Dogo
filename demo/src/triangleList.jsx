@@ -46,6 +46,7 @@ class AText extends Component {
     }
 
     animate(...compare) {
+        if (this.props.allIn) return true;
         for (let i = 0; i < compare.length; i++) {
             if (compare[i] === this.props.animate % 15) return true;
         }

@@ -17,7 +17,8 @@ class Logo extends Component {
         this.renderMedium = this.renderMedium.bind(this);
         this.renderSmall = this.renderSmall.bind(this);
         this.state = {
-            animateNext: -1
+            animateNext: -1,
+            allIn: false
         }
     }
 
@@ -55,6 +56,7 @@ class Logo extends Component {
                 defaultColor={this.defaultColor}
                 animate={this.state.animateNext}
                 onclick={this.props.onClick}
+                allIn={this.state.allIn}
             />
         );
     }
@@ -68,13 +70,13 @@ class Logo extends Component {
             <div style={{ height: "60px", width: "auto", overflow: "", display: "block", userSelect: "none" }}>
                 <svg width="60px" height="60px" viewBox="0 0 201 200" style={{ display: "block", cursor: "pointer" }} onClick={this.props.onClick}>
                     <polygon style={this.defaultColor} points="0,0 200,0 100,200" />
-                    <AngleList animate={this.state.animateNext} />
+                    <AngleList animate={this.state.animateNext} allIn={this.state.allIn} />
                 </svg>
                 <span style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onClick}>
-                    <AText text={this.props.text} animate={this.state.animateNext} />
+                    <AText text={this.props.text} animate={this.state.animateNext} allIn={this.state.allIn} />
                 </span>
                 <span style={Object.assign({}, subpaddings, subtext, { fontFamily: this.props.font })} onClick={this.props.onClick}>
-                    <AText text={this.props.sub} />
+                    <AText text={this.props.sub} allIn={this.state.allIn} />
                 </span>
             </div>
         );
@@ -89,13 +91,13 @@ class Logo extends Component {
             <div style={{ height: "200px", width: "200px", overflow: "", display: "block", userSelect: "none" }}>
                 <svg width="200px" height="200px" viewBox="0 0 201 200" stroke="black" style={{ display: "block", cursor: "pointer" }} onClick={this.props.onClick}>
                     <polygon style={this.defaultColor} points="0,0 200,0 100,200" />
-                    <AngleList animate={this.state.animateNext} />
+                    <AngleList animate={this.state.animateNext} allIn={this.state.allIn} />
                 </svg>
                 <div style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onClick}>
-                    <AText text={this.props.text} animate={this.state.animateNext} />
+                    <AText text={this.props.text} animate={this.state.animateNext} allIn={this.state.allIn} />
                 </div>
                 <div style={Object.assign({}, subpaddings, subtext, { fontFamily: this.props.font })} onClick={this.props.onClick}>
-                    <AText text={this.props.sub} />
+                    <AText text={this.props.sub} allIn={this.state.allIn} />
                 </div>
             </div>
         );
@@ -107,7 +109,7 @@ class Logo extends Component {
             this.state.animateNext++;
             this.setState({
                 animateNext: this.state.animateNext
-            })
+            });
             this.timeoutClearer = setTimeout(nextAnimate, 200);
         }
         nextAnimate();
@@ -116,8 +118,12 @@ class Logo extends Component {
     stopAnimate() {
         clearTimeout(this.timeoutClearer);
         this.setState({
-            animateNext: -1
-        })
+            animateNext: -1,
+            allIn: true
+        });
+        setTimeout(() => {
+            this.setState({ allIn: false });
+        }, 300);
     }
 }
 
