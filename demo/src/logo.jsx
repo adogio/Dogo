@@ -123,7 +123,7 @@ class Logo extends Component {
         });
         setTimeout(() => {
             this.setState({ allIn: false });
-        }, 300);
+        }, 350);
     }
 }
 

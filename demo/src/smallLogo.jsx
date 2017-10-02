@@ -39,10 +39,8 @@ class SmallLogo extends Component {
                     style={{
                         visibility: (this.state.hover || this.props.animate !== -1) ? "visible" : "hidden",
                         opacity: (this.state.hover || this.props.animate !== -1) ? "1" : "0",
-                        transition: "0.4s all"
+                        transition: "0.3s all"
                     }}
-                    onMouseOver={this.handleHover}
-                    onMouseLeave={this.releaseHover}
                 >
                     <span style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onclick}>
                         <AText text={this.props.text} animate={this.props.animate} allIn={this.props.allIn} />
