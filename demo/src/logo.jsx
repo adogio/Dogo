@@ -2,6 +2,7 @@ import React, {
     Component
 } from 'react';
 import Angle from './triangle';
+import AText from './animteText';
 
 class Logo extends Component {
     defaultColor = { fill: "#FFFC34" };
@@ -69,7 +70,9 @@ class Logo extends Component {
                     <Angle reverse={this.state.mark === "br"} points="100,127 152,100 100,200" />
                     <Angle reverse={this.state.mark === "bt"} points="50,100 152,100 100,128" />
                 </svg>
-                <span style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.animate}>{this.props.text}</span>
+                <span style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.animate}>
+                    <AText text={this.props.text} />
+                </span>
             </div>
         );
     }

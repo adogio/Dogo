@@ -2,46 +2,23 @@ import React, {
     Component
 } from 'react';
 
-class Angle extends Component {
-    bothColor = { transition: "0.2s all" }
-    defaultColor = { fill: "#FFFC34" };
-    hoverColor = { fill: "black" };
-
+class AText extends Component {
+    defaultColor = { color: "black" };
+    hoverColorList = [];
     constructor(props) {
         super(props);
-        this.handleHover = this.handleHover.bind(this);
-        this.releaseHover = this.releaseHover.bind(this);
-        this.state = {
-            hover: false
-        }
+        this.renderText = this.renderText.bind(this);
     }
 
     render() {
         return (
-            <polygon
-                onMouseOver={this.handleHover}
-                onMouseLeave={this.releaseHover}
-                style={
-                    Object.assign({}, this.bothColor, this.props.reverse ?
-                        this.hoverColor : this.state.hover ?
-                            this.hoverColor : this.defaultColor)
-                }
-                points={this.props.points}
-            />
+            <span>{this.props.text.split("").map(this.renderText)}</span>
         );
     }
 
-    handleHover() {
-        this.setState({
-            hover: true
-        })
-    }
-
-    releaseHover() {
-        this.setState({
-            hover: false
-        })
+    renderText(value, index) {
+        console.log(value, index)
     }
 }
 
-export default Angle;
+export default AText;
