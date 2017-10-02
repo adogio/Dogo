@@ -35,11 +35,15 @@ class SmallLogo extends Component {
                     <polygon style={this.props.defaultColor} points="0,0 200,0 100,200" />
                     <AngleList animate={this.props.animate} />
                 </svg>
-                <div style={{
-                    visibility: (this.state.hover || this.props.animate !== -1) ? "visible" : "hidden",
-                    opacity: (this.state.hover || this.props.animate !== -1) ? "1" : "0",
-                    transition: "0.4s all"
-                }}>
+                <div
+                    style={{
+                        visibility: (this.state.hover || this.props.animate !== -1) ? "visible" : "hidden",
+                        opacity: (this.state.hover || this.props.animate !== -1) ? "1" : "0",
+                        transition: "0.4s all"
+                    }}
+                    onMouseOver={this.handleHover}
+                    onMouseLeave={this.releaseHover}
+                >
                     <span style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onclick}>
                         <AText text={this.props.text} animate={this.props.animate} />
                     </span>
