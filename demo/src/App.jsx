@@ -17,6 +17,7 @@ class App extends Component {
           <Logo text="Resume" sub=".adog.io" font="'Righteous', cursive" num="medium" onClick={this.triggerAnimate}></Logo>
           <Logo text="Resume" sub=".adog.io" size="large" font="'Righteous', cursive" num="large" onClick={this.triggerAnimate}></Logo>
           <Logo text="Resume" sub=".adog.io" size="small" font="'Righteous', cursive" num="small" onClick={this.triggerAnimate}></Logo>
+          <br />
           <button onClick={this.stopAnimate}>stop</button>
         </div>
       </div>
