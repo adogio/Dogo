@@ -11,9 +11,13 @@ class AText extends Component {
     }
 
     render() {
-        return (
-            <span>{this.props.text.split("").map(this.renderText)}</span>
-        );
+        if (this.props.text) {
+            return (
+                <span>{this.props.text.split("").map(this.renderText)}</span>
+            );
+        } else {
+            return null;
+        }
     }
 
     renderText(value, index) {
