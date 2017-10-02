@@ -42,6 +42,8 @@ class Logo extends Component {
     renderMedium() {
         const text = { position: "relative", fontSize: "35px" };
         const paddings = { left: "49px", top: "-45px", cursor: "pointer" };
+        const subtext = { position: "relative", fontSize: "15px" };
+        const subpaddings = { right: "0px", top: "-73px", cursor: "pointer" };
         return (
             <div style={{ height: "60px", width: "auto", overflow: "", display: "block", userSelect: "none" }}>
                 <svg width="60px" height="60px" viewBox="0 0 201 200" style={{ display: "block", cursor: "pointer" }} onClick={this.animate}>
@@ -51,6 +53,9 @@ class Logo extends Component {
                 <span style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.animate}>
                     <AText text={this.props.text} animate={this.state.animateNext} />
                 </span>
+                <span style={Object.assign({}, subpaddings, subtext, { fontFamily: this.props.font })} onClick={this.animate}>
+                    <AText text={this.props.sub} />
+                </span>
             </div>
         );
     }
@@ -58,6 +63,8 @@ class Logo extends Component {
     renderLarge() {
         const text = { transform: "rotate(297deg)", position: "relative", fontSize: "40px" };
         const paddings = { left: "65px", top: "-118px", cursor: "pointer" };
+        const subtext = { transform: "rotate(297deg)", position: "relative", fontSize: "18px" };
+        const subpaddings = { left: "90px", top: "-150px", cursor: "pointer" };
         return (
             <div style={{ height: "200px", width: "200px", overflow: "", display: "block", userSelect: "none" }}>
                 <svg width="200px" height="200px" viewBox="0 0 201 200" stroke="black" style={{ display: "block", cursor: "pointer" }} onClick={this.animate}>
@@ -66,6 +73,9 @@ class Logo extends Component {
                 </svg>
                 <div style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.animate}>
                     <AText text={this.props.text} animate={this.state.animateNext} />
+                </div>
+                <div style={Object.assign({}, subpaddings, subtext, { fontFamily: this.props.font })} onClick={this.animate}>
+                    <AText text={this.props.sub} />
                 </div>
             </div>
         );
