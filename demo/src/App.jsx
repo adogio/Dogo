@@ -9,12 +9,7 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Logo text="adog.iossssss"></Logo>
-        </div>
-        <div>
-          <Logo text="adog.iosss"></Logo>
-          <Logo text="adog.ios"></Logo>
-          <Logo text="adog"></Logo>
+          <Logo text="adog.io" size="medium" font="'Times New Roman', Times, serif"></Logo>
         </div>
       </div>
     );
