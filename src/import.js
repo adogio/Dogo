@@ -1,4 +1,5 @@
-import logo from './logo.jsx';
+import dogo from './React/dogo.jsx';
 
-export default logo;
-export const Logo = logo;
+export default dogo;
+export const Logo = dogo;
+export const Dogo = dogo;

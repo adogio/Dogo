@@ -5,7 +5,7 @@ import AText from './animteText';
 import AngleList from './triangleList';
 import SmallLogo from './smallLogo';
 
-class Logo extends Component {
+class Dogo extends Component {
 
     defaultColor = { fill: "#FFFC34" };
     timeoutClearer = 0;
@@ -164,4 +164,4 @@ class Logo extends Component {
     }
 }
 
-export default Logo;
+export default Dogo;
