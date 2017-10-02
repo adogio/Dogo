@@ -5,8 +5,8 @@ import Angle from './triangle';
 
 class Logo extends Component {
     defaultColor = { fill: "#FFFC34" };
-    text = { transform: "rotate(296deg)", position: "relative", fontSize: "20px" };
-    paddings = { left: "-185px", top: "-530px" };
+    text = { position: "absolute", fontSize: "20px" };
+    paddings = { left: "0px", top: "0px" };
     timeoutClearer = 0;
 
     constructor(props) {
@@ -19,8 +19,8 @@ class Logo extends Component {
 
     render() {
         return (
-            <div style={{ height: "200px", height: "200px", overflow: "hidden" }} onClick={this.animate}>
-                <svg width="200px" height="200px" viewBox="0 0 201 200" stroke="black" >
+            <div style={{ height: "200px", width: "200px", overflow: "hidden", display: "block" }} onClick={this.animate}>
+                <svg width="200px" height="200px" viewBox="0 0 201 200" stroke="black" style={{ display: "block" }}>
                     <polygon style={this.defaultColor} points="0,0 200,0 100,200" />
                     <Angle reverse={this.state.mark === "ct"} points="75,49 100,68 127,50 100,0" />
                     <Angle reverse={this.state.mark === "cl"} points="50,100 75,49 100,67 100,100" />
@@ -35,8 +35,8 @@ class Logo extends Component {
                     <Angle reverse={this.state.mark === "br"} points="100,127 152,100 100,200" />
                     <Angle reverse={this.state.mark === "bt"} points="50,100 152,100 100,128" />
                 </svg>
-                <div style={Object.assign({}, this.paddings, this.text)}>{this.props.text}</div>
-            </div >
+                <span style={Object.assign({}, this.paddings, this.text)}>{this.props.text}</span>
+            </div>
         );
     }
 
