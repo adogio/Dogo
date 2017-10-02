@@ -22,9 +22,11 @@ class TextElement extends Component {
                 onMouseOver={this.handleHover}
                 onMouseLeave={this.releaseHover}
                 style={
-                    Object.assign({}, this.bothColor, this.props.reverse ?
-                        this.hoverColor : this.state.hover ?
-                            this.hoverColor : this.defaultColor)
+                    Object.assign({}, this.bothColor,
+                        this.props.allIn ? { color: this.props.allInColor } :
+                            this.props.reverse ? this.hoverColor :
+                                this.state.hover ? this.hoverColor :
+                                    this.defaultColor)
                 }
                 points={this.props.points}
             >{this.props.char}</span>

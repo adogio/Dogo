@@ -25,8 +25,18 @@ class App extends Component {
     }
     setTimeout(function () {
       for (let i in window.adog.logo) {
-        window.adog.logo[i].unload();
+        window.adog.logo[i].failed();
       }
+      setTimeout(function () {
+        for (let i in window.adog.logo) {
+          window.adog.logo[i].success();
+        }
+        setTimeout(function () {
+          for (let i in window.adog.logo) {
+            window.adog.logo[i].unload();
+          }
+        }, 600);
+      }, 600);
     }, 2000);
   }
 }

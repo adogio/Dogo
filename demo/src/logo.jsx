@@ -12,28 +12,38 @@ class Logo extends Component {
     constructor(props) {
         super(props);
         this.animate = this.animate.bind(this);
+        this.sussessAnimate = this.sussessAnimate.bind(this);
+        this.failedAnimate = this.failedAnimate.bind(this);
         this.stopAnimate = this.stopAnimate.bind(this);
         this.renderLarge = this.renderLarge.bind(this);
         this.renderMedium = this.renderMedium.bind(this);
         this.renderSmall = this.renderSmall.bind(this);
         this.state = {
             animateNext: -1,
-            allIn: false
+            allIn: false,
+            allInColor: "919191"
         }
     }
 
     componentWillMount() {
         const load = this.animate;
+        const success = this.sussessAnimate;
+        const failed = this.failedAnimate;
         const unload = this.stopAnimate;
         if (!window.adog) window.adog = {};
         if (!window.adog.logo) window.adog.logo = {};
         if (this.props.num) {
+            if (window.adog.logo[this.props.num]) throw "Same num exist, plase use different number";
             window.adog.logo[this.props.num] = {
                 load: load,
+                success: success,
+                failed: failed,
                 unload: unload
-            }
+            };
         } else {
             window.adog.logo.load = load;
+            window.adog.logo.success = success;
+            window.adog.logo.failed = failed;
             window.adog.logo.unload = unload;
         }
     }
@@ -57,6 +67,7 @@ class Logo extends Component {
                 animate={this.state.animateNext}
                 onclick={this.props.onClick}
                 allIn={this.state.allIn}
+                allInColor={this.state.allInColor}
             />
         );
     }
@@ -70,13 +81,13 @@ class Logo extends Component {
             <div style={{ height: "60px", width: "auto", overflow: "", display: "block", userSelect: "none" }}>
                 <svg width="60px" height="60px" viewBox="0 0 201 200" style={{ display: "block", cursor: "pointer" }} onClick={this.props.onClick}>
                     <polygon style={this.defaultColor} points="0,0 200,0 100,200" />
-                    <AngleList animate={this.state.animateNext} allIn={this.state.allIn} />
+                    <AngleList animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} />
                 </svg>
                 <span style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onClick}>
-                    <AText text={this.props.text} animate={this.state.animateNext} allIn={this.state.allIn} />
+                    <AText text={this.props.text} animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} />
                 </span>
                 <span style={Object.assign({}, subpaddings, subtext, { fontFamily: this.props.font })} onClick={this.props.onClick}>
-                    <AText text={this.props.sub} allIn={this.state.allIn} />
+                    <AText text={this.props.sub} allIn={this.state.allIn} allInColor={this.state.allInColor} />
                 </span>
             </div>
         );
@@ -91,13 +102,13 @@ class Logo extends Component {
             <div style={{ height: "200px", width: "200px", overflow: "", display: "block", userSelect: "none" }}>
                 <svg width="200px" height="200px" viewBox="0 0 201 200" stroke="black" style={{ display: "block", cursor: "pointer" }} onClick={this.props.onClick}>
                     <polygon style={this.defaultColor} points="0,0 200,0 100,200" />
-                    <AngleList animate={this.state.animateNext} allIn={this.state.allIn} />
+                    <AngleList animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} />
                 </svg>
                 <div style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onClick}>
-                    <AText text={this.props.text} animate={this.state.animateNext} allIn={this.state.allIn} />
+                    <AText text={this.props.text} animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} />
                 </div>
                 <div style={Object.assign({}, subpaddings, subtext, { fontFamily: this.props.font })} onClick={this.props.onClick}>
-                    <AText text={this.props.sub} allIn={this.state.allIn} />
+                    <AText text={this.props.sub} allIn={this.state.allIn} allInColor={this.state.allInColor} />
                 </div>
             </div>
         );
@@ -119,7 +130,32 @@ class Logo extends Component {
         clearTimeout(this.timeoutClearer);
         this.setState({
             animateNext: -1,
-            allIn: true
+            allIn: true,
+            allInColor: "#919191"
+        });
+        setTimeout(() => {
+            this.setState({ allIn: false });
+        }, 350);
+    }
+
+    failedAnimate() {
+        clearTimeout(this.timeoutClearer);
+        this.setState({
+            animateNext: -1,
+            allIn: true,
+            allInColor: "#CC0000"
+        });
+        setTimeout(() => {
+            this.setState({ allIn: false });
+        }, 350);
+    }
+
+    sussessAnimate() {
+        clearTimeout(this.timeoutClearer);
+        this.setState({
+            animateNext: -1,
+            allIn: true,
+            allInColor: "#29CC00"
         });
         setTimeout(() => {
             this.setState({ allIn: false });

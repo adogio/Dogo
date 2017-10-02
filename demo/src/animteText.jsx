@@ -17,7 +17,12 @@ class AText extends Component {
     }
 
     renderText(value, index) {
-        return <TextElement char={value} key={"char" + index} reverse={this.props.allIn ? true : this.props.animate % this.props.text.length === index} />
+        return <TextElement
+            char={value} key={"char" + index}
+            reverse={this.props.animate % this.props.text.length === index}
+            allIn={this.props.allIn}
+            allInColor={this.props.allInColor}
+        />
     }
 }
 

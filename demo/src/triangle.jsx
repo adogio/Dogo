@@ -29,7 +29,7 @@ class Angle extends Component {
                 onMouseLeave={this.releaseHover}
                 style={
                     Object.assign({}, this.bothColor,
-                        this.props.reverse ? this.props.allIn && this.props.anti ? { fill: "#919191" } : this.hoverColor :
+                        this.props.reverse ? this.props.allIn && this.props.anti ? { fill: this.props.allInColor } : this.hoverColor :
                             this.state.hover ? this.hoverColor :
                                 this.props.color ? this.props.color :
                                     this.defaultColor)
