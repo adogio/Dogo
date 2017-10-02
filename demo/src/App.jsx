@@ -9,7 +9,8 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Logo text="TexT" font="'Righteous', cursive"></Logo>
+          <Logo text="Resume" sub=".adog.io" font="'Righteous', cursive"></Logo>
+          <Logo text="Resume" sub=".adog.io" size="large" font="'Righteous', cursive"></Logo>
         </div>
       </div>
     );

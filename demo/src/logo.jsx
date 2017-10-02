@@ -41,7 +41,7 @@ class Logo extends Component {
 
     renderMedium() {
         const text = { position: "relative", fontSize: "35px" };
-        const paddings = { left: "55px", top: "-55px", cursor: "pointer" };
+        const paddings = { left: "49px", top: "-45px", cursor: "pointer" };
         return (
             <div style={{ height: "60px", width: "auto", overflow: "", display: "block", userSelect: "none" }}>
                 <svg width="60px" height="60px" viewBox="0 0 201 200" style={{ display: "block", cursor: "pointer" }} onClick={this.animate}>
@@ -57,7 +57,7 @@ class Logo extends Component {
 
     renderLarge() {
         const text = { transform: "rotate(297deg)", position: "relative", fontSize: "40px" };
-        const paddings = { left: "73px", top: "-122px", cursor: "pointer" };
+        const paddings = { left: "65px", top: "-118px", cursor: "pointer" };
         return (
             <div style={{ height: "200px", width: "200px", overflow: "", display: "block", userSelect: "none" }}>
                 <svg width="200px" height="200px" viewBox="0 0 201 200" stroke="black" style={{ display: "block", cursor: "pointer" }} onClick={this.animate}>

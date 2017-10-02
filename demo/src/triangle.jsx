@@ -7,6 +7,7 @@ class Angle extends Component {
     defaultColor = null;
     hoverColor = { fill: "#250000" };
     hoverColorList = ["FFD9D9", "FFE4D9", "FFEFD9", "F8FFD9", "DAFFD9", "D9FEFF", "D9E9FF", "D9E3FF", "E6D9FF", "FFD9FF", "FFD9EF"];
+    antiColorList = ["690000", "006928", "0B0069", "690060", "310069", "944F00", "006964", "676900", "310069"];
 
     constructor(props) {
         super(props);
@@ -36,7 +37,12 @@ class Angle extends Component {
     }
 
     getRandColor() {
-        const color = this.hoverColorList[Math.floor(Math.random() * 1000) % this.hoverColorList.length];
+        let color = null;
+        if (this.props.anti) {
+            color = this.antiColorList[Math.floor(Math.random() * 1000) % this.antiColorList.length];
+        } else {
+            color = this.hoverColorList[Math.floor(Math.random() * 1000) % this.hoverColorList.length];
+        }
         return { fill: "#" + color };
     }
 

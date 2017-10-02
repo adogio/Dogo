@@ -11,22 +11,24 @@ class AText extends Component {
     constructor(props) {
         super(props);
         this.animate = this.animate.bind(this);
+        this.getRandColor = this.getRandColor.bind(this);
+        this.centerColor = this.getRandColor(false);
     }
 
     render() {
         return (
             <g>
-                <Angle reverse={this.animate(12)} points="75,49 100,68 127,50 100,0" />
-                <Angle reverse={this.animate(2)} points="50,100 75,49 100,67 100,100" />
-                <Angle reverse={this.animate(7)} points="100,100 100,67 127,49 152,100" />
+                <Angle reverse={this.animate(12)} color={this.centerColor} points="75,49 100,68 127,50 100,0" />
+                <Angle reverse={this.animate(2)} color={this.centerColor} points="50,100 75,49 100,67 100,100" />
+                <Angle reverse={this.animate(7)} color={this.centerColor} points="100,100 100,67 127,49 152,100" />
                 <Angle reverse={this.animate(10)} points="100,0 152,34 200,0" />
-                <Angle reverse={!this.animate(9)} points="152,34 152,100 200,0" />
+                <Angle reverse={!this.animate(9)} anti points="152,34 152,100 200,0" />
                 <Angle reverse={this.animate(8, 11)} points="100,0 152,100 152,34" />
                 <Angle reverse={this.animate(14)} points="100,0 50,34 0,0" />
                 <Angle reverse={this.animate(0)} points="50,33 50,100 0,0" />
-                <Angle reverse={!this.animate(1, 13)} points="100,0 50,100 50,33" />
+                <Angle reverse={!this.animate(1, 13)} anti points="100,0 50,100 50,33" />
                 <Angle reverse={this.animate(4)} points="50,100 100,127 100,200" />
-                <Angle reverse={!this.animate(5)} points="100,127 152,100 100,200" />
+                <Angle reverse={!this.animate(5)} anti points="100,127 152,100 100,200" />
                 <Angle reverse={this.animate(3, 6)} points="50,100 152,100 100,128" />
             </g>
         );
