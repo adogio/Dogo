@@ -18,14 +18,24 @@ class SmallLogo extends Component {
 
     render() {
         const text = { position: "relative", fontSize: "35px" };
-        const paddings = { left: "49px", top: "-45px", cursor: "pointer" };
+        const paddings = {
+            left: this.props.width ? (this.props.width - 11 + "px") : "49px",
+            top: "-45px",
+            cursor: "pointer"
+        };
         const subtext = { position: "relative", fontSize: "15px" };
         const subpaddings = { right: "0px", top: "-73px", cursor: "pointer" };
         return (
-            <div style={{ height: "60px", width: "auto", overflow: "", display: "block", userSelect: "none" }}>
+            <div style={{
+                height: (this.props.height ? this.props.height : "60") + "px",
+                width: (this.props.width ? this.props.width + "px" : "auto"),
+                overflow: "",
+                display: "block",
+                userSelect: "none"
+            }}>
                 <svg
-                    width="60px"
-                    height="60px"
+                    width={(this.props.width ? this.props.width : "60") + "px"}
+                    height={(this.props.height ? this.props.height : "60") + "px"}
                     viewBox="0 0 201 200"
                     style={{ display: "block", cursor: "pointer" }}
                     onClick={this.props.onclick}

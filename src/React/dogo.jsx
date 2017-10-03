@@ -42,6 +42,7 @@ class Dogo extends Component {
                 unload: unload
             };
         } else {
+            if (window.adog.logo.load) throw new Error("Only there is one logo component in most parent can use without num assign");
             window.adog.logo.load = load;
             window.adog.logo.success = success;
             window.adog.logo.failed = failed;
@@ -69,20 +70,42 @@ class Dogo extends Component {
                 onclick={this.props.onClick}
                 allIn={this.state.allIn}
                 allInColor={this.state.allInColor}
+                width={this.props.width}
+                height={this.props.height}
             />
         );
     }
 
     renderMedium() {
         const text = { position: "relative", fontSize: "35px" };
-        const paddings = { left: "49px", top: "-45px", cursor: "pointer" };
+        const paddings = {
+            left: this.props.width ? (this.props.width - 11 + "px") : "49px",
+            top: "-45px",
+            cursor: "pointer"
+        };
         const subtext = { position: "relative", fontSize: "15px" };
         const subpaddings = { right: "0px", top: "-73px", cursor: "pointer" };
         return (
-            <div style={{ height: "60px", width: "auto", overflow: "", display: "block", userSelect: "none" }}>
-                <svg width="60px" height="60px" viewBox="0 0 201 200" style={{ display: "block", cursor: "pointer" }} onClick={this.props.onClick}>
+            <div
+                style={{
+                    height: (this.props.height ? this.props.height : "60") + "px",
+                    width: this.props.width ? (this.props.width + "px") : "auto",
+                    overflow: "",
+                    display: "block",
+                    userSelect: "none"
+                }}
+            >
+                <svg
+                    width={(this.props.width ? this.props.width : "60") + "px"}
+                    height={(this.props.height ? this.props.height : "60") + "px"}
+                    viewBox="0 0 201 200"
+                    style={{ display: "block", cursor: "pointer" }}
+                    onClick={this.props.onClick}>
                     <polygon style={this.defaultColor} points="0,0 200,0 100,200" />
-                    <AngleList animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} />
+                    <AngleList
+                        animate={this.state.animateNext}
+                        allIn={this.state.allIn}
+                        allInColor={this.state.allInColor} />
                 </svg>
                 <span style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onClick}>
                     <AText text={this.props.text} animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} />
@@ -100,8 +123,21 @@ class Dogo extends Component {
         const subtext = { transform: "rotate(297deg)", position: "relative", fontSize: "18px" };
         const subpaddings = { left: "90px", top: "-152px", cursor: "pointer" };
         return (
-            <div style={{ height: "200px", width: "200px", overflow: "", display: "block", userSelect: "none" }}>
-                <svg width="200px" height="200px" viewBox="0 0 201 200" stroke="black" style={{ display: "block", cursor: "pointer" }} onClick={this.props.onClick}>
+            <div style={{
+                height: (this.props.height ? this.props.height : "200") + "px",
+                width: (this.props.width ? this.props.width : "200") + "px",
+                overflow: "",
+                display: "block",
+                userSelect: "none"
+            }}>
+                <svg
+                    width={(this.props.width ? this.props.width : "200") + "px"}
+                    height={(this.props.height ? this.props.height : "200") + "px"}
+                    viewBox="0 0 201 200"
+                    stroke="black"
+                    style={{ display: "block", cursor: "pointer" }}
+                    onClick={this.props.onClick}
+                >
                     <polygon style={this.defaultColor} points="0,0 200,0 100,200" />
                     <AngleList animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} />
                 </svg>
@@ -111,7 +147,7 @@ class Dogo extends Component {
                 <div style={Object.assign({}, subpaddings, subtext, { fontFamily: this.props.font })} onClick={this.props.onClick}>
                     <AText text={this.props.sub} allIn={this.state.allIn} allInColor={this.state.allInColor} />
                 </div>
-            </div>
+            </div >
         );
     }
 

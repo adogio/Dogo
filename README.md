@@ -30,6 +30,10 @@ import Dogo from 'dogo'
     sub="subName"
     size="large/medium(default if not assign size)/small"
     num="mainLogo(logoId use to trigger animate)(leave empty to use single way trigger)"
+    onClick="function on click"
+    center="center color"
+    width="logo width(number)"// use like width={15}
+    height="logoHeight"
 />
 ```
 

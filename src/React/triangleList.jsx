@@ -12,7 +12,15 @@ class AText extends Component {
         super(props);
         this.animate = this.animate.bind(this);
         this.getRandColor = this.getRandColor.bind(this);
-        this.centerColor = this.getRandColor(false);
+        if (this.props.center) {
+            if (this.props.center.fill) {
+                this.centerColor = this.props.center;
+            } else {
+                this.centerColor = { fill: this.props.center };
+            }
+        } else {
+            this.centerColor = this.getRandColor(false);
+        }
     }
 
     render() {
