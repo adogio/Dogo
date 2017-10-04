@@ -43,7 +43,7 @@ class SmallLogo extends Component {
                     onMouseLeave={this.releaseHover}
                 >
                     <polygon style={this.props.defaultColor} points="0,0 200,0 100,200" />
-                    <AngleList animate={this.props.animate} allIn={this.props.allIn} allInColor={this.props.allInColor} />
+                    <AngleList animate={this.props.animate} allIn={this.props.allIn} allInColor={this.props.allInColor} center={this.props.center} />
                 </svg>
                 <div
                     style={{

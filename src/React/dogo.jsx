@@ -72,6 +72,7 @@ class Dogo extends Component {
                 allInColor={this.state.allInColor}
                 width={this.props.width}
                 height={this.props.height}
+                center={this.props.center}
             />
         );
     }
@@ -105,7 +106,8 @@ class Dogo extends Component {
                     <AngleList
                         animate={this.state.animateNext}
                         allIn={this.state.allIn}
-                        allInColor={this.state.allInColor} />
+                        allInColor={this.state.allInColor}
+                        center={this.props.center} />
                 </svg>
                 <span style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onClick}>
                     <AText text={this.props.text} animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} />
@@ -139,7 +141,7 @@ class Dogo extends Component {
                     onClick={this.props.onClick}
                 >
                     <polygon style={this.defaultColor} points="0,0 200,0 100,200" />
-                    <AngleList animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} />
+                    <AngleList animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} center={this.props.center} />
                 </svg>
                 <div style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onClick}>
                     <AText text={this.props.text} animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} />

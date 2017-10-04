@@ -34,6 +34,7 @@ import Dogo from 'dogo'
     center="center color"
     width="logo width(number)"// use like width={15}
     height="logoHeight"
+    center="centercolor"
 />
 ```
 
