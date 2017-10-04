@@ -26,15 +26,14 @@ import Dogo from 'dogo'
 
 ```jsx
 <Dogo 
-    text="logoName"
-    sub="subName"
-    size="large/medium(default if not assign size)/small"
-    num="mainLogo(logoId use to trigger animate)(leave empty to use single way trigger)"
-    onClick="function on click"
-    center="center color"
-    width="logo width(number)"// use like width={15}
-    height="logoHeight"
-    center="centercolor"
+    text="logoName" 
+    sub="subName"  (optional)
+    size="large/medium(default if not assign size)/small"  (optional)
+    num="mainLogo(logoId use to trigger animate)(leave empty to use single way trigger)"  (optional)
+    onClick="function on click"  (optional)
+    center="center color" (optional)
+    width="logo width(number)"// use like width={15}  (optional)
+    height="logoHeight"  (optional)
 />
 ```
 
