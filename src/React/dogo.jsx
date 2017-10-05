@@ -26,6 +26,16 @@ class Dogo extends Component {
         }
     }
 
+    componentWillUnmount() {
+        if (!window.adog) window.adog = {};
+        if (!window.adog.logo) window.adog.logo = {};
+        if (this.props.num) {
+            window.adog.logo[num] = void 0;
+        } else {
+            window.adog.logo = {};
+        }
+    }
+
     componentWillMount() {
         const load = this.animate;
         const success = this.sussessAnimate;
