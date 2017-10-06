@@ -30,7 +30,7 @@ class Dogo extends Component {
         if (!window.adog) window.adog = {};
         if (!window.adog.logo) window.adog.logo = {};
         if (this.props.num) {
-            window.adog.logo[num] = void 0;
+            window.adog.logo[this.props.num] = void 0;
         } else {
             window.adog.logo = {};
         }
@@ -44,7 +44,13 @@ class Dogo extends Component {
         if (!window.adog) window.adog = {};
         if (!window.adog.logo) window.adog.logo = {};
         if (this.props.num) {
-            if (window.adog.logo[this.props.num]) throw new Error("Same num exist, plase use different number");
+            if (window.adog.logo[this.props.num]) {
+                if (this.props.force) {
+                    console.log("Same num exist, plase use different number");
+                } else {
+                    throw new Error("Same num exist, plase use different number");
+                }
+            }
             window.adog.logo[this.props.num] = {
                 load: load,
                 success: success,
@@ -52,7 +58,13 @@ class Dogo extends Component {
                 unload: unload
             };
         } else {
-            if (window.adog.logo.load) throw new Error("Only there is one logo component in most parent can use without num assign");
+            if (window.adog.logo.load) {
+                if (this.props.force) {
+                    console.log("Only there one logo component at most parent can exist. USE WITHOUT NUM ASSIGN");
+                } else {
+                    throw new Error("Only there one logo component at most parent can exist. USE WITHOUT NUM ASSIGN");
+                }
+            }
             window.adog.logo.load = load;
             window.adog.logo.success = success;
             window.adog.logo.failed = failed;
