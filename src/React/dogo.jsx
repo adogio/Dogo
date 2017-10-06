@@ -84,6 +84,7 @@ class Dogo extends Component {
     renderSmall() {
         return (
             <SmallLogo
+                theme={this.props.theme}
                 text={this.props.text}
                 sub={this.props.sub}
                 font={this.props.font}
@@ -126,16 +127,26 @@ class Dogo extends Component {
                     onClick={this.props.onClick}>
                     <polygon style={this.defaultColor} points="0,0 200,0 100,200" />
                     <AngleList
+                        theme={this.props.theme}
                         animate={this.state.animateNext}
                         allIn={this.state.allIn}
                         allInColor={this.state.allInColor}
                         center={this.props.center} />
                 </svg>
                 <span style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onClick}>
-                    <AText text={this.props.text} animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} />
+                    <AText
+                        theme={this.props.theme}
+                        text={this.props.text}
+                        animate={this.state.animateNext}
+                        allIn={this.state.allIn}
+                        allInColor={this.state.allInColor} />
                 </span>
                 <span style={Object.assign({}, subpaddings, subtext, { fontFamily: this.props.font })} onClick={this.props.onClick}>
-                    <AText text={this.props.sub} allIn={this.state.allIn} allInColor={this.state.allInColor} />
+                    <AText
+                        theme={this.props.theme}
+                        text={this.props.sub}
+                        allIn={this.state.allIn}
+                        allInColor={this.state.allInColor} />
                 </span>
             </div>
         );
@@ -163,13 +174,27 @@ class Dogo extends Component {
                     onClick={this.props.onClick}
                 >
                     <polygon style={this.defaultColor} points="0,0 200,0 100,200" />
-                    <AngleList animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} center={this.props.center} />
+                    <AngleList
+                        theme={this.props.theme}
+                        animate={this.state.animateNext}
+                        allIn={this.state.allIn}
+                        allInColor={this.state.allInColor}
+                        center={this.props.center} />
                 </svg>
                 <div style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onClick}>
-                    <AText text={this.props.text} animate={this.state.animateNext} allIn={this.state.allIn} allInColor={this.state.allInColor} />
+                    <AText
+                        theme={this.props.theme}
+                        text={this.props.text}
+                        animate={this.state.animateNext}
+                        allIn={this.state.allIn}
+                        allInColor={this.state.allInColor} />
                 </div>
                 <div style={Object.assign({}, subpaddings, subtext, { fontFamily: this.props.font })} onClick={this.props.onClick}>
-                    <AText text={this.props.sub} allIn={this.state.allIn} allInColor={this.state.allInColor} />
+                    <AText
+                        theme={this.props.theme}
+                        text={this.props.sub}
+                        allIn={this.state.allIn}
+                        allInColor={this.state.allInColor} />
                 </div>
             </div >
         );

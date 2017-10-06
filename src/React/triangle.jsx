@@ -44,7 +44,11 @@ class Angle extends Component {
         if (this.props.anti) {
             color = this.antiColorList[Math.floor(Math.random() * 1000) % this.antiColorList.length];
         } else {
-            color = "250000";
+            if (this.props.theme === "dark") {
+                color = "00cbe6";
+            } else {
+                color = "250000";
+            }
         }
         return { fill: "#" + color };
     }
@@ -52,7 +56,11 @@ class Angle extends Component {
     getRandColor() {
         let color = null;
         if (this.props.anti) {
-            color = "250000";
+            if (this.props.theme === "dark") {
+                color = "00cbe6";
+            } else {
+                color = "250000";
+            }
         } else {
             color = this.hoverColorList[Math.floor(Math.random() * 1000) % this.hoverColorList.length];
         }

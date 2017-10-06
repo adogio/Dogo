@@ -43,7 +43,12 @@ class SmallLogo extends Component {
                     onMouseLeave={this.releaseHover}
                 >
                     <polygon style={this.props.defaultColor} points="0,0 200,0 100,200" />
-                    <AngleList animate={this.props.animate} allIn={this.props.allIn} allInColor={this.props.allInColor} center={this.props.center} />
+                    <AngleList
+                        theme={this.props.theme}
+                        animate={this.props.animate}
+                        allIn={this.props.allIn}
+                        allInColor={this.props.allInColor}
+                        center={this.props.center} />
                 </svg>
                 <div
                     style={{
@@ -53,10 +58,19 @@ class SmallLogo extends Component {
                     }}
                 >
                     <span style={Object.assign({}, paddings, text, { fontFamily: this.props.font })} onClick={this.props.onclick}>
-                        <AText text={this.props.text} animate={this.props.animate} allIn={this.props.allIn} allInColor={this.props.allInColor} />
+                        <AText
+                            theme={this.props.theme}
+                            text={this.props.text}
+                            animate={this.props.animate}
+                            allIn={this.props.allIn}
+                            allInColor={this.props.allInColor} />
                     </span>
                     <span style={Object.assign({}, subpaddings, subtext, { fontFamily: this.props.font })} onClick={this.props.onclick}>
-                        <AText text={this.props.sub} allIn={this.props.allIn} allInColor={this.props.allInColor} />
+                        <AText
+                            theme={this.props.theme}
+                            text={this.props.sub}
+                            allIn={this.props.allIn}
+                            allInColor={this.props.allInColor} />
                     </span>
                 </div>
             </div>

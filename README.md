@@ -32,6 +32,7 @@ import Dogo from 'dogo'
     // NUM is required when using react-router, which will effect the unmount function
     num="mainLogo(logoId use to trigger animate)(leave empty to use single way trigger)"  (optional)
     force=true or false //(unmount function force)
+    theme="dark or light" (optional)
     onClick="function on click"  (optional)
     center="center color" (optional)
     width="logo width(number)"// use like width={15}  (optional)

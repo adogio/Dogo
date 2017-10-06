@@ -4,7 +4,7 @@ import React, {
 
 class TextElement extends Component {
     bothColor = { transition: "0.2s all" }
-    defaultColor = { color: "black" };
+    defaultColor = null;
     hoverColor = null;
     hoverColorList = ["FF3939", "FF7139", "BAFF39", "FFB039", "39FFA3", "39A6FF", "3978FF", "4639FF", "9539FF", "D739FF", "FF39BD"];
 
@@ -14,6 +14,11 @@ class TextElement extends Component {
         this.releaseHover = this.releaseHover.bind(this);
         this.getHoverColor = this.getHoverColor.bind(this);
         this.hoverColor = this.getHoverColor();
+        if (this.props.theme == "dark") {
+            this.defaultColor = { color: "white" };
+        } else {
+            this.defaultColor = { color: "black" };
+        }
         this.state = {
             hover: false
         }
